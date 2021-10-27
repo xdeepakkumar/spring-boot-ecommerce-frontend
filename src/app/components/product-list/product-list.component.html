@@ -1,0 +1,29 @@
+<div class="main-content">
+  <div class="section-content section-content-p30">
+   <!-- <div *ngIf="products?.length == 0">
+    <h4>Category : <span class="text-primary">{{currentCategoryName | uppercase}}</span></h4>
+    <hr>
+   </div> -->
+    <div class="container-fluid">
+      <div class="row">
+        <!-- loop over the collection of products -->
+        <div class="col-md-3" *ngFor="let pd of products">
+          <div class="product-box">
+
+            <a routerLink="/products/{{pd.id}}" style="text-decoration: none;">
+              <img src="{{pd.imageUrl}}" alt="product-picture" class="img-responsive">
+            </a>
+            <h1><a routerLink="/products/{{pd.id}}" style="text-decoration: none;">{{pd.name}}</a></h1>
+            <p class="price">{{pd.unitPrice | currency : "INR"}}</p>
+            <p>{{pd.unitsInStock}}</p>
+            <a href="#" class="primary-btn">Add to Cart</a>
+          </div>
+        </div>
+        <!-- if product is empty then display a message -->
+        <div *ngIf="products?.length == 0" class="alert alert-warning col-md-12 " role="alert">
+          <p>No Products found</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
