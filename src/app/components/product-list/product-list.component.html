@@ -16,7 +16,7 @@
             <h1><a routerLink="/products/{{pd.id}}" style="text-decoration: none;">{{pd.name}}</a></h1>
             <p class="price">{{pd.unitPrice | currency : "INR"}}</p>
             <p>{{pd.unitsInStock}}</p>
-            <a href="#" class="primary-btn">Add to Cart</a>
+            <button class="btn btn-primary btn-sm" (click)="addToCart(pd)">Add to Cart</button>
           </div>
         </div>
         <!-- if product is empty then display a message -->
