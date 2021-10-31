@@ -4,8 +4,8 @@
       <div *ngIf="cartItems.length > 0">
         <table class="table table-bordered">
           <tr>
-            <th width="20%" style="border: 1px solid white">Product Image</th>
-            <th width="50%" style="border: 1px solid white">Product Details</th>
+            <th width="20%" style="border: 1px solid #e2e2e2">Product Image</th>
+            <th width="50%" style="border: 1px solid #e2e2e2">Product Details</th>
             <th width="30%"></th>
           </tr>
           <tr
@@ -20,13 +20,14 @@
                 width="150px"
               />
             </td>
-            <td>
+            <td style="border: 1px solid #e2e2e2">
               <p>{{ tempCartItem.name }}</p>
               <p>{{ tempCartItem.unitPrice | currency: "INR" }}</p>
             </td>
             <td>
               <div class="items">
-                <label style="margin-bottom: 3px;">Quantity: </label>
+                <div  style="padding-left: 3px;">
+                  <label style="margin-bottom: 3px;">Quantity: </label>
                 <div class="row no-gutters">
                   <div  class="col">
                     <button class="btn btn-primary btn-sm" (click)="incrementQuantity(tempCartItem)"><i class="fas fa-plus"></i></button>
@@ -39,8 +40,9 @@
                   </div>
                   <div class="col-8"></div>
                 </div>
+                </div>
               </div>
-              <button class="btn btn-primary bg-primary btn-sm mt-1" (click)="remove(tempCartItem)">Remove</button>
+              <button class="btn btn-primary bg-primary btn-sm mt-1" (click)="remove(tempCartItem)" style="margin-left: 10px;">Remove</button>
               <p class="mt-2">
                 SubTotal :
                 {{
@@ -52,11 +54,13 @@
           </tr>
           <tr style="border: 1px solid #e2e2e2">
             <td colspan="2"></td>
-            <td style="font-weight: bold">
-              <p>Total Quantity: {{ totalQuantity }}</p>
-              <p>Shipping : FREE</p>
-              <p>Total Price: {{ totalPrice | currency: "INR" }}</p>
-              <a routerLink="/checkout" class="btn bg-success btn-success btn-sm mb-3">Checkout</a>
+            <td style="border-left: 1px solid #e2e2e2;">
+              <div style="padding-left: 10px;">
+                <p>Total Quantity: {{ totalQuantity }}</p>
+                <p>Shipping : <span style="font-weight: bold;"> FREE</span></p>
+                <p>Total Price: {{ totalPrice | currency: "INR" }}</p>
+                <a routerLink="/checkout" class="btn bg-success btn-success btn-sm mb-3">Checkout</a>
+              </div>
             </td>
           </tr>
 
