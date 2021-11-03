@@ -3,5 +3,6 @@
     welcome back {{ userFullName }}
   </div>
   <button *ngIf="!isAuthenticated" class="security-btn" routerLink="/login">Login</button>
+  <button *ngIf="isAuthenticated" class="security-btn ml-1 mr-1" routerLink="/members">Members</button>
   <button *ngIf="isAuthenticated" class="security-btn " (click)="logout()">Logout</button>
 </div>
